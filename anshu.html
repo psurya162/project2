@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo-App-UI-Web</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="./Popup.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<style>
+    .BlurBackground {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 120%;
+    background-color: #000000;
+    opacity: 60%;
+}
+
+.popupWindow {
+    position: absolute;
+    top: 27%;
+    left: 30%;
+    width: 500px;
+    height: 220px;
+    box-shadow: 0px 0px 20px #67676729;
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    border: 1px solid #EDEDED;
+    border-radius: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.popupWindow .PopupHeader {
+    width: 100%;
+    border-bottom: 1px solid #EDEDED;
+    justify-content: space-between;
+    padding: 20px;
+    font-size: 20px;
+    color: #404040;
+    font-weight: bold;
+}
+
+
+
+.popupWindow .InputBox {
+    width: 90%;
+    height: 60%;
+
+}
+
+.popupWindow .InputBox input::placeholder {
+    /* font: normal normal normal 16px/20px Inter; */
+    font-size: 16px;
+    color: #858585;
+    opacity: 1;
+}
+
+.popupWindow .InputBox input[type="text"] {
+    background: #F7F7F7 0% 0% no-repeat padding-box;
+    border: 1px solid #EDEDED;
+    border-radius: 4px;
+    opacity: 1;
+    width: 430px;
+    height: 30px;
+    padding: 20px;
+}
+
+.popupWindow .InputBox button {
+    margin-top: 20px;
+    border: none;
+    background-color: #00A5EC;
+    color: white;
+    width: 150px;
+    height: 40px;
+    border-radius: 4px;
+    opacity: 1;
+    margin-left: 280px;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+</style>
+<body>
+    
+    <header class="flex-box">
+        <h1>Task<span> List</span></h1>
+      </header>
+  
+      <div class="ButtonBox">
+        <a href="#" class="flex-box"><i class="fa-solid fa-circle-plus" style="color: #00a5ec;"></i>
+          <span>Add New Task</span></a>
+      </div>
+  
+      <section class="TaskBox-Container">
+  
+        <div class="Task-Box flex-box">
+          <div class="TaskBox__header flex-box">
+            <a href="./index2.html">Trip to Paris</a>
+          </div>
+          <div class="TaskBox__taskList flex-box">
+            <div class="taskList__item">
+              <input type="checkbox" checked />
+              <span class="taskList__item__Completed">Visit Church</span>
+            </div>
+            <div class="taskList__item">
+              <input type="checkbox" /> <span>Shooping</span>
+            </div>
+          </div>
+        </div>
+  
+        <div class="Task-Box flex-box">
+          <div class="TaskBox__header flex-box">My To Do List</div>
+          <div class="TaskBox__taskList flex-box">
+            <div class="taskList__item">
+              <input type="checkbox" checked />
+              <span class="taskList__item__Completed">Visit Supermarket</span>
+            </div>
+            <div class="taskList__item">
+              <input type="checkbox" /> <span>Buy Vegetables</span>
+            </div>
+          </div>
+        </div>
+  
+        <div class="Task-Box flex-box">
+          <div class="TaskBox__header flex-box">Movies I will Watch</div>
+          <div class="TaskBox__taskList flex-box">
+            <div class="taskList__item">
+              <input type="checkbox" checked />
+              <span class="taskList__item__Completed"
+                >Ms Dhoni - The Untold story</span
+              >
+            </div>
+            <div class="taskList__item">
+              <input type="checkbox" /> <span> Kedarnath</span>
+            </div>
+          </div>
+        </div>
+  
+        <div class="Task-Box flex-box">
+          <div class="TaskBox__header flex-box">Daily Morning Routine for...</div>
+          <div class="TaskBox__taskList flex-box">
+            <div class="taskList__item">
+              <input type="checkbox" checked />
+              <span class="taskList__item__Completed">Wake up at 8 AM</span>
+            </div>
+            <div class="taskList__item">
+              <input type="checkbox" /> <span> Sleep at 1 AM</span>
+            </div>
+          </div>
+        </div>
+  
+        <div class="Task-Box flex-box">
+          <div class="TaskBox__header flex-box">Book to Read</div>
+          <div class="TaskBox__taskList flex-box">
+            <div class="taskList__item">
+              <input type="checkbox" checked />
+              <span class="taskList__item__Completed">Design of Everyday</span>
+            </div>
+            <div class="taskList__item">
+              <input type="checkbox" /> <span> The Dhoni Touch</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="BlurBackground"></div>
+
+      <div class="popupWindow flex-box">
+        <div class="PopupHeader flex-box">
+            <p>Add New Task</p>
+           <a href="./index.html"> <i class="fa-solid fa-xmark" style="color: #858585;"></i></a>
+        </div>
+        <div class="InputBox">
+            <input type="text" name="TaskName" id="TaskName" placeholder="Learn C++">
+            <button  class="flex-box"><span class="Sign">&plus;</span>Add Task</button>
+        </div>
+      </div>
+</body>
+</html>
